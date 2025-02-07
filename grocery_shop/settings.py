@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-7!btq5pv91dbvd=2p52kony*&+l+mo9w*72gyu8#h#@04&yj$9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-grocery-mart-backend.onrender.com']
+ALLOWED_HOSTS = ['django-grocery-mart-backend.onrender.com',
+                 '127.0.0.1'
+                 ]
 
 
 # Application definition
@@ -147,3 +149,14 @@ CORS_ALLOW_ALL_ORIGINS = True
 #     'http://localhost:8000',  # React app running on port 3000
 #     'http://localhost:5173',  # If you're using this IP address instead
 # ]
+
+
+# PAYMENT GATEWAY
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+STRIPE_TEST_API_KEY = os.getenv('STRIPE_TEST_API_KEY')
+STRIPE_TEST_PUBLISHABLE_KEY = os.getenv('STRIPE_TEST_PUBLISHABLE_KEY')
